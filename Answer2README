@@ -1,0 +1,28 @@
+# Eye of Insight
+
+## Description
+
+**Eye of Insight** is a custom search engine index for text "scrolls" (files).  
+It supports:
+1. **Insert** new scrolls: building an index of tokens with file and line postings.  
+2. **Search** for a token: prints the number of occurrences and each `(filename, lineNumber)`.  
+3. **Remove** a token: deletes it entirely from the index.  
+4. **Traverse** the index: prints all tokens in sorted order.
+
+The index is implemented as a **Binary Search Tree (BST)** of tokens. Each node contains:
+- A **token** (`String`)
+- A **frequency** counter
+- A custom **singly-linked postings list** (`SList`) of `(filename, lineNumber)` pairs
+
+All operations are ASCII-only, include strict boundary and format checks, and require **Java 7**.
+
+## Files in this Repository
+
+- `Solution.java` — the full Java 7 implementation of Eye of Insight.
+- `README.md` — this documentation file.
+
+## Usage
+
+1. **Compile** the code:
+   ```bash
+   javac Solution.java
